@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMP TABLE</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="no">EMPNO:</label>
+        <input type="text" name="no" id="no">
+        <label for="na">EMPNAME:</label>
+        <input type="text" name="na" id="na">
+        <label for="jo">JOB:</label>
+        <input type="text" name="jo" id="jo">
+        <label for="mg">MGR</label>
+        <input type="text" name="mg" id="mg">
+        <label for="date">HIRE DATE:</label>
+        <input type="date" name="date" id="date">
+        <label for="sal">SALARY:</label>
+        <input type="text" name="sal" id="sal">
+        <label for="de">SELECT DEPTNO:</label>
+        
+        <select name="de" id="de">
+            {% for i in deptno %}
+            <option value="{{i.dname}}">{{i.deptno}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="submit">
+        
+    </form>
+</body>
+</html>
